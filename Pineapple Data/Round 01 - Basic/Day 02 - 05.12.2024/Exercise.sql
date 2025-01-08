@@ -52,3 +52,16 @@ SELECT Student_ID,
 FROM dbo.Students
 WHERE Graduation_Year IS NULL
   AND GPA > 3.0;
+
+-- 06. Tìm những sinh viên có tuổi lớn hơn 21 và điểm GPA có giá trị (không phải NULL), sau đó sắp xếp theo tên sinh viên.
+SELECT Student_ID,
+       Full_Name,
+       Age,
+       Major,
+       GPA,
+       Enrollment_Date,
+       Graduation_Year
+FROM dbo.Students
+WHERE Age > 21
+  AND GPA IS NOT NULL
+ORDER BY Full_Name;
