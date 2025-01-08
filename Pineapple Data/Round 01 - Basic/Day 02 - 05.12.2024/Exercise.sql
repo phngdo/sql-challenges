@@ -40,3 +40,15 @@ SELECT Student_ID,
 FROM dbo.Students
 WHERE GPA IS NOT NULL
   AND GPA > 3.5;
+
+-- 05. Tìm tất cả các sinh viên có năm tốt nghiệp là NULL và có điểm GPA lớn hơn 3.0.
+SELECT Student_ID,
+       Full_Name,
+       Age,
+       Major,
+       GPA,
+       Enrollment_Date,
+       Graduation_Year
+FROM dbo.Students
+WHERE Graduation_Year IS NULL
+  AND GPA > 3.0;
