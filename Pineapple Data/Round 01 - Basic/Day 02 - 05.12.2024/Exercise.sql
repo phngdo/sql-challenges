@@ -28,3 +28,15 @@ SELECT Student_ID,
 FROM dbo.Students
 WHERE (Age BETWEEN 20 AND 25)
   AND GPA >= 3.0;
+
+-- 04. Lọc ra các sinh viên có điểm GPA không phải là NULL và lớn hơn 3.5.
+SELECT Student_ID,
+       Full_Name,
+       Age,
+       Major,
+       GPA,
+       Enrollment_Date,
+       Graduation_Year
+FROM dbo.Students
+WHERE GPA IS NOT NULL
+  AND GPA > 3.5;
