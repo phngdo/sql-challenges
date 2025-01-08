@@ -73,3 +73,16 @@ FROM dbo.Students
 WHERE GPA > 3.0
 GROUP BY Major
 HAVING COUNT(Student_ID) >= 2;
+
+-- 08. Tìm sinh viên có tên và điểm GPA không bị NULL, nhưng đã có ít nhất 14 năm học chưa hoàn thành học tập (dựa vào Enrollment_Date).
+SELECT Student_ID,
+       Full_Name,
+       Age,
+       Major,
+       GPA,
+       Enrollment_Date,
+       Graduation_Year
+FROM dbo.Students
+WHERE Full_Name IS NOT NULL 
+  AND GPA IS NOT NULL
+  AND DATEDIFF(YEAR, Enrollment_Date, GETDATE()) >= 14;
