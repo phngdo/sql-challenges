@@ -16,3 +16,15 @@ SELECT DISTINCT Major,
                 GPA
 FROM dbo.Students
 WHERE GPA > 3.5;
+
+-- 03. Lọc ra những sinh viên có tuổi từ 20 đến 25 và có GPA >= 3.0
+SELECT Student_ID,
+       Full_Name,
+       Age,
+       Major,
+       GPA,
+       Enrollment_Date,
+       Graduation_Year
+FROM dbo.Students
+WHERE (Age BETWEEN 20 AND 25)
+  AND GPA >= 3.0;
