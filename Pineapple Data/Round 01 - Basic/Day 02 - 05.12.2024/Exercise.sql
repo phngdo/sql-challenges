@@ -65,3 +65,11 @@ FROM dbo.Students
 WHERE Age > 21
   AND GPA IS NOT NULL
 ORDER BY Full_Name;
+
+-- 07. Tính số lượng sinh viên có điểm GPA lớn hơn 3.0, chia theo ngành học, và chỉ lấy những ngành có ít nhất 2 sinh viên.
+SELECT Major,
+       COUNT(Student_ID) AS Count_Student
+FROM dbo.Students
+WHERE GPA > 3.0
+GROUP BY Major
+HAVING COUNT(Student_ID) >= 2;
