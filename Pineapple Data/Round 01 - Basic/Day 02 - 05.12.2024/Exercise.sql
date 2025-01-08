@@ -9,3 +9,10 @@ SELECT Student_ID,
 FROM dbo.Students
 WHERE GPA < 2.0
   AND Major = 'Computer Sci';
+
+-- 02. Lọc danh sách các sinh viên có GPA lớn hơn 3.5 và không bị trùng ngành học
+SELECT DISTINCT Major,
+                Full_Name,
+                GPA
+FROM dbo.Students
+WHERE GPA > 3.5;
